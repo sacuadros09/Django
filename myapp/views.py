@@ -28,6 +28,10 @@ def projects(request):
         "projects":projects
     })
 
+
 def tasks(request):
    # tasks= get_object_or_404(Tasks, title=title)
-    return render (request,"tasks.html")
+   tasks=Tasks.objects.all()
+   return render(request,"tasks.html",{
+       "tasks":tasks
+   })
